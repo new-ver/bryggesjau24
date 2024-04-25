@@ -1,3 +1,6 @@
 {
-	"/": []
+	"/": [],
+	"/attending": [
+		"src/routes/attending/+page.ts"
+	]
 }
