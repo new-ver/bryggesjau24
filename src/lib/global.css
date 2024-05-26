@@ -1,0 +1,73 @@
+/* General Body and Background Styling */
+
+body {
+    background-color: #f5f5dc; /* beige background */
+    font-family: "Josefin Sans";
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common Styles for Sections */
+section {
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Banner Styling */
+.banner {
+    background: linear-gradient(
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.8)
+        ),
+        url("psychedelic-pattern.jpg");
+    background-size: cover;
+    color: #ff69b4; /* bright pink */
+}
+
+/* Program Styling */
+.program {
+    background: rgba(0, 0, 0, 0.7);
+    color: #00ff00; /* neon green */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.program h2,
+.program h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* RSVP and Comments Styling */
+.rsvp {
+    background: rgba(255, 255, 224, 0.8); /* light yellow for a softer look */
+    color: #ff4500; /* orange */
+    border-radius: 10px;
+}
+
+input,
+textarea {
+    border: 2px solid #666;
+    padding: 10px;
+    margin-top: 5px;
+    width: 90%;
+    background-color: #fff;
+}
+
+button {
+    background-color: #6a5acd; /* slate blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
