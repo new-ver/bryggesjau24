@@ -1,24 +1,26 @@
 <script lang="ts">
     import { page } from "$app/stores";
+    import { base } from "$app/paths";
 </script>
 
 <header>
     <nav>
+        <!-- <a href="{base}/about">About</a> -->
         <svg viewBox="0 0 2 3" aria-hidden="true">
             <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
         </svg>
         <ul>
             <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
-                <a href="/">Home</a>
+                <a href="{base}/">Home</a>
             </li>
 
-            <li
+            <!-- <li
                 aria-current={$page.url.pathname === "attending"
                     ? "page"
                     : undefined}
             >
-                <a href="/attending">Attending</a>
-            </li>
+                <a href="{base}/attending">Attending</a>
+            </li> -->
         </ul>
     </nav>
 </header>
@@ -27,25 +29,6 @@
     header {
         display: flex;
         justify-content: space-between;
-    }
-
-    .corner {
-        width: 3em;
-        height: 3em;
-    }
-
-    .corner a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .corner img {
-        width: 2em;
-        height: 2em;
-        object-fit: contain;
     }
 
     nav {
