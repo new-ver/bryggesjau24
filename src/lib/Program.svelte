@@ -18,9 +18,8 @@
     };
 </script>
 
+<div class="top-image-container"></div>
 <div id="program">
-    <div class="top-image-container"></div>
-
     <div class="program-content">
         <h2>Festival Program</h2>
         {#each Object.entries(schedule) as [day, events]}
@@ -37,13 +36,6 @@
 </div>
 
 <style>
-    #program {
-        /* background-color: #b9e6d8; */
-        background: linear-gradient(to bottom, #b9e6d8, #e7bb89);
-        height: 100vh;
-        /* background-image: url("../lib/assets/background3.png"); */
-    }
-
     .program-content {
         display: flex;
         flex-direction: column;

@@ -69,49 +69,88 @@
 </script>
 
 <Banner />
-<Program />
 
-{#if formSent}
-    <h3>Påmeldt! :D</h3>
-{/if}
-<div class="form__container">
-    <form on:submit|preventDefault={sendForm}>
-        <label>
-            Name:
-            <input type="text" bind:value={name} />
-        </label>
+<div class="wrapper">
+    <Program />
+    <div class="form__container">
+        <div class="form-stuff">
+            <h3>Register</h3>
+            <form on:submit|preventDefault={sendForm}>
+                <label>
+                    Name:
+                    <input type="text" bind:value={name} />
+                </label>
 
-        <label>
-            Response:
-            <select bind:value={response}>
-                <option value="Kommer">Kommer</option>
-                <option value="Kanskje">Kanskje</option>
-                <option value="Kan ikke">Kan ikke</option>
-            </select>
-        </label>
+                <label>
+                    Response:
+                    <select bind:value={response}>
+                        <option value="Kommer">Kommer</option>
+                        <option value="Kanskje">Kanskje</option>
+                        <option value="Kan ikke">Kan ikke</option>
+                    </select>
+                </label>
 
-        <label>
-            Comment:
-            <textarea bind:value={comment}></textarea>
-        </label>
+                <label>
+                    Comment:
+                    <textarea bind:value={comment}></textarea>
+                </label>
 
-        <button type="submit">Submit</button>
-    </form>
-</div>
+                <span style="display: flex; padding-top: 10px">
+                    <button type="submit">Submit</button>
+                    {#if formSent}
+                        <h3 style="margin: 0 0 0 15px">Påmeldt! :D</h3>
+                    {/if}
+                </span>
+            </form>
+        </div>
+    </div>
 
-<div class="attendees__container">
-    <h1>Attendees</h1>
-    {#each attendees as a}
-        <li>{a.name} - {a.response}</li>
-    {/each}
+    <div class="attendees__container">
+        <h1>Attending</h1>
+        <div style="display: flex; flex-direction:column">
+            {#each attendees as a}
+                <li>
+                    <strong>
+                        {a.name} -
+                    </strong>
+                    {a.response}
+                    <i>
+                        - {a.comment}
+                    </i>
+                </li>
+            {/each}
+        </div>
+    </div>
 </div>
 
 <style>
+    .wrapper {
+        background: linear-gradient(to bottom, #b9e6d8, #e7bb89);
+        height: 200vh;
+        padding: 0 0 100px 0;
+    }
+
+    label {
+        margin: 10px 0;
+    }
+
+    .form-stuff {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* border: 1px solid black; */
+        padding: 0 50px 50px 50px;
+        border-radius: 20px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        /* background-color: rgb(192, 239, 224); */
+    }
+
     .attendees__container {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 20px;
+        list-style: none;
     }
 
     .form__container {
@@ -123,6 +162,5 @@
 
     label {
         display: block;
-        margin-bottom: 10px;
     }
 </style>

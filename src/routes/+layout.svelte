@@ -13,6 +13,9 @@
 
 <style>
     /* General Body and Background Styling */
+    main {
+        font-family: "Poppins";
+    }
 
     .app {
         /* display: flex;
