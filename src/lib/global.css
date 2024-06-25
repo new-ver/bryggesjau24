@@ -1,5 +1,5 @@
 /* General Body and Background Styling */
-@import url("");
+/* @import url(""); */
 
 @font-face {
     font-family: "Poppins";
@@ -52,6 +52,7 @@ section {
 
 /* Program Styling */
 .program {
+    height: 100vh;
     background: rgba(0, 0, 0, 0.7);
     color: #00ff00; /* neon green */
     border-radius: 10px;
@@ -65,6 +66,7 @@ section {
 
 /* RSVP and Comments Styling */
 .rsvp {
+    height: 100vh;
     background: rgba(255, 255, 224, 0.8); /* light yellow for a softer look */
     color: #ff4500; /* orange */
     border-radius: 10px;
