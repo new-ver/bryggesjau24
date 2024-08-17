@@ -8,7 +8,11 @@
     ],
     Saturday: [
       { time: "13:00", band: "Yoga w. Lindy Svendsen" },
-      { time: "19:00", band: "Schnitzeljakt" },
+      {
+        time: "19:00",
+        band: "Schnitzeljakt",
+        url: "https://schnitzeljakt24.netlify.app/",
+      },
       { time: "22:00", band: "DJ&FRIENDS" },
       // More bands
     ],
@@ -33,8 +37,20 @@
       <div class="day">
         <h3>{day}</h3>
         <ul>
-          {#each events as { time, band }}
-            <li>{time} - {band}</li>
+          {#each events as { time, band, url }}
+            <li>
+              {time} -
+              {#if url}
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-as-text">{band}</a
+                >
+              {:else}
+                {band}
+              {/if}
+            </li>
           {/each}
         </ul>
       </div>
@@ -43,6 +59,15 @@
 </div>
 
 <style>
+  a.link-as-text {
+    color: inherit; /* Inherit text color from parent */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Show pointer cursor on hover */
+  }
+  a.link-as-text:hover {
+    text-decoration: underline; /* Optional: underline on hover to indicate clickable */
+    color: darkblue; /* Optional: change color on hover */
+  }
   #program {
     display: flex;
     flex-direction: row;
